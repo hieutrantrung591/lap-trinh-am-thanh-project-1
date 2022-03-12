@@ -83,6 +83,6 @@ class Signal {
 					}
 				}
 			}
+			return result;
 		}
-		return result;
 };
