@@ -43,4 +43,22 @@ class DS {
             }
             cout << "Chi so goc toa do: " << origin_index << endl; 
         }
+
+		void shifting() {
+			cout << "Nhap gia tri thoi gian dich chuyen:\n";
+			int m;
+			cin >> m;
+
+			if (m > 0) {
+				origin_index = origin_index + m;
+			}
+			else {
+				origin_index = origin_index - m;
+			}
+		}
+
+		void reversal() {
+			reverse(values.begin(), values.end());
+			origin_index = values.size() - origin_index - 1;
+		}
 };
