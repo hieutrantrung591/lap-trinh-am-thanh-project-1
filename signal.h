@@ -44,6 +44,17 @@ class DS {
             cout << "Chi so goc toa do: " << origin_index << endl; 
         }
 
+		// Tong 2 tin hieu roi rac
+		void tong() {
+
+		}
+
+		// Tich 2 tin hieu roi rac
+		void tich() {
+
+		}
+
+		// Dich chuyen thoi gian
 		void shifting() {
 			cout << "Nhap gia tri thoi gian dich chuyen:\n";
 			int m;
@@ -57,8 +68,24 @@ class DS {
 			}
 		}
 
+		// Dao nguoc thoi gian
 		void reversal() {
 			reverse(values.begin(), values.end());
 			origin_index = values.size() - origin_index - 1;
+		}
+
+		// Gian - tang tan so lay mau
+		void upsampling() {
+
+		}
+
+		// Nen - giam tan so lay mau
+		void downsampling() {
+
+		}
+
+		// Tich chap
+		void tich_chap() {
+
 		}
 };
