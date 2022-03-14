@@ -100,8 +100,10 @@ class DS {
 			while(o1 - k >= 0 || o2 - k >= 0){
 				if(o1 - k >= 0 && o2 - k >= 0)
 					kq.values[i] = (values[o1 - k] * b.values[o2 - k]);
-				else
+				else {
 					kq.values[i] = 0;
+					i--;
+				}					
 				i--;
 				k++;
 			}
@@ -110,11 +112,14 @@ class DS {
 			while(o1 + k < size || o2 + k < b.size){
 				if(o1 + k < size && o2 + k < b.size)
 					kq.values[i] = (values[o1+k] * b.values[o2+k]);
-				else
+				else {
 					kq.values[i] = 0;
+					i--;
+				}
 				i++;
 				k++;
 			}
+			kq.origin_index = min(o1, o2);
 			kq.size = i;
 			return kq;
 		}
