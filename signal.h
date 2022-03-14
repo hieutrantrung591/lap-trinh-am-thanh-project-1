@@ -39,13 +39,13 @@ class DS {
 
         void output() {
             for(int i = 0; i < values.size(); i++) {
-                cout << values[i] << " ";
+                cout << values[i] << "; ";
             }
-            cout << "Chi so goc toa do: " << origin_index << endl; 
+            cout << "\nChi so goc toa do: " << origin_index << endl; 
         }
 
 		// Tong 2 tin hieu roi rac
-		void tong() {
+		void tong(const DS& b) {
 
 		}
 
@@ -75,13 +75,40 @@ class DS {
 		}
 
 		// Gian - tang tan so lay mau
-		void upsampling() {
+		DS upsampling() {
+			int l;
+			cout << "Nhap ty so gian:\n";
+			cin >> l;
 
+			DS result;
+			for(int i = 0; i <= values.size(); i++) {
+				float x = values[i];
+				result.values.push_back(x);
+				if (i != values.size()) {
+					for (int j = l; j > 1; j--) {
+						result.values.push_back(0);
+					}
+				}	
+			}
+			result.size = result.values.size();
+			result.origin_index = origin_index + l;
+			return result;
 		}
 
 		// Nen - giam tan so lay mau
-		void downsampling() {
+		DS downsampling() {
+			int m;
+			cout << "Nhap ty so nen:\n";
+			cin >> m;
 
+			DS result;
+			for (int i = 0; i < values.size(); i = i + m) {
+				float x = values[i];
+				result.values.push_back(x); 
+			}
+			result.size = result.values.size();
+			result.origin_index = origin_index - (m - 1);
+			return result;
 		}
 
 		// Tich chap
